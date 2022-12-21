@@ -11,7 +11,7 @@
     <PackageProjectUrl></PackageProjectUrl>
     <IncludeSource>true</IncludeSource>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
 		<Description>This is not a proper Frends task, it is only for testing build and publish pipelines.</Description>
 		<PackageProjectUrl>https://frends.com/</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/FrendsPlatform/Frends.TestTask</RepositoryUrl>
