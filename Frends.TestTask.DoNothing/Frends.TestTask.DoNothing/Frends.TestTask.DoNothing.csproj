@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net6.0</TargetFramework>
+    <authors>Frends</authors>
+    <copyright>Frends</copyright>
+		<Company>Frends</Company>
+		<Product>Frends</Product>
+		<PackageTags>frends</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl></PackageProjectUrl>
+    <IncludeSource>true</IncludeSource>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>1.0.0</Version>
+		<Description>This is not a proper Frends task, it is only for testing build and publish pipelines.</Description>
+		<PackageProjectUrl>https://frends.com/</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/FrendsPlatform/Frends.TestTask</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="FrendsTaskMetadata.json" Pack="true" PackagePath="/">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+  </ItemGroup>
+
+</Project>
+
