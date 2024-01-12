@@ -9,7 +9,7 @@ namespace Frends.TestTask.DoNothing.Tests
         public void DoNothingTest()
         {
             var result = TestTask.DoNothing();
-            Assert.IsTrue(result);
+            Assert.AreEqual("true", result);
         }
     }
 }
