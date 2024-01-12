@@ -3,12 +3,11 @@
     public class TestTask
     {
         /// <summary>
-        /// Not a real task.
+        /// Not a real task. 
         /// </summary>
-        public static string DoNothing()
+        public static bool DoNothing()
         {
-            var username = "Foo";
-            return $"{username.ToString()}";
+            return true;
         }
     }
 }
