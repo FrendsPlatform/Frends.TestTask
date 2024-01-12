@@ -7,8 +7,8 @@
         /// </summary>
         public static string DoNothing()
         {
-            var valid = true;
-            return $"{valid.ToString()}";
+            var username = "Foo";
+            return $"{username}";
         }
     }
 }
