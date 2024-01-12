@@ -5,9 +5,10 @@
         /// <summary>
         /// Not a real task. 
         /// </summary>
-        public static bool DoNothing()
+        public static string DoNothing()
         {
-            return true;
+            var foo = true;
+            return $"{foo.ToString()}";
         }
     }
 }
