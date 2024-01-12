@@ -8,7 +8,7 @@
         public static string DoNothing()
         {
             var username = "Foo";
-            return $"{username}";
+            return $"{username.ToString()}";
         }
     }
 }
