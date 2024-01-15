@@ -12,7 +12,7 @@ on:
 jobs:
   linux_build:
     name: build on Linux
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@issue-62
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@issue-68
     with:
       workdir: Frends.TestTask.DoNothing
     secrets:
