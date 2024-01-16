@@ -8,7 +8,7 @@
         public static string DoNothing()
         {
             var foo = true;
-            return $"{foo.ToString()}";
+            return $"{foo}";
         }
     }
 }
