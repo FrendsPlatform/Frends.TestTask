@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/release.yml@dont-push-symbols-on-release
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/release.yml@fspw-213
     with:
       workdir: Frends.TestTask.DoNothing
     secrets:
