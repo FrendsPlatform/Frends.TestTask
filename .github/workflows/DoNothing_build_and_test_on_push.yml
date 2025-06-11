@@ -10,8 +10,8 @@ on:
   
 
 jobs:
-  windows_build:
-    name: build on Windows
+  linux_build:
+    name: build on Ubuntu
     uses: FrendsPlatform/FrendsTasks/.github/workflows/build_test_partner.yml@fspw-320
     with:
       workdir: Frends.TestTask.DoNothing

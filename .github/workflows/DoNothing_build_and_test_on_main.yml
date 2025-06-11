@@ -9,8 +9,8 @@ on:
   workflow_dispatch:
   
 jobs:
-  windows_build:
-    name: build on windows
+  linux_build:
+    name: build on Ubuntu
     uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main_partner.yml@fspw-320
     with:
       workdir: Frends.TestTask.DoNothing
