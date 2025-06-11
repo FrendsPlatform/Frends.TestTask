@@ -12,5 +12,3 @@ jobs:
   windows_build:
     name: build on windows
     uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main_partner.yml@fspw-320
-    with:
-      workdir: Frends.TestTask.DoNothing
