@@ -1,0 +1,41 @@
+name: test_build_test.yml
+
+on:
+  push:
+    branches:
+      - fspw-281
+
+jobs:
+  linux_build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@fspw-281
+    with:
+      workdir: 'Frends.TestTask.DoNothing'
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      test_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
+
+  windows_build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_test.yml@fspw-281
+    with:
+      workdir: 'Frends.TestTask.DoNothing'
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      test_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
+
+  linux_build_strict:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@fspw-281
+    with:
+      workdir: 'Frends.TestTask.DoNothing'
+      strict_analyzers: true
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      test_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
+
+  windows_build_strict:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_test.yml@fspw-281
+    with:
+      workdir: 'Frends.TestTask.DoNothing'
+      strict_analyzers: true
+    secrets:
+      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      test_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
