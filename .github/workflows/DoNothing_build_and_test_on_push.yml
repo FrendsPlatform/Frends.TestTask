@@ -6,13 +6,14 @@ on:
       - main
     paths:
       - 'Frends.TestTask.DoNothing/**'
+      - '.github/workflows/**'
   workflow_dispatch:
   
 
 jobs:
   linux_build:
     name: build on Linux
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@main
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_test.yml@fspw-819
     with:
       workdir: Frends.TestTask.DoNothing
     secrets:
