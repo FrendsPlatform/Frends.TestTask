@@ -1,3 +1,5 @@
+using System.Threading;
+using Frends.TestTask.DoNothing.Definitions;
 using NUnit.Framework;
 
 namespace Frends.TestTask.DoNothing.Tests
@@ -8,8 +10,8 @@ namespace Frends.TestTask.DoNothing.Tests
         [Test]
         public void DoNothingTest()
         {
-            var result = TestTask.DoNothing();
-            Assert.IsTrue(result);
+            var result = TestTask.DoNothing(new Input(), new Options(), CancellationToken.None);
+            Assert.IsTrue(result.Success);
         }
     }
 }

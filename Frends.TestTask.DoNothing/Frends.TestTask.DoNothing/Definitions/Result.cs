@@ -1,0 +1,19 @@
+﻿namespace Frends.TestTask.DoNothing.Definitions;
+
+/// <summary>
+/// Result class for the DoNothing task.
+/// </summary>
+public class Result
+{
+    /// <summary>
+    /// Indicates if the task completed successfully.
+    /// </summary>
+    /// <example>true</example>
+    public bool Success { get; set; }
+
+    /// <summary>
+    /// Error that occurred during task execution.
+    /// </summary>
+    /// <example>object { string Message, Exception AdditionalInfo }</example>
+    public Error Error { get; set; }
+}
