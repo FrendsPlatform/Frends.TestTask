@@ -19,6 +19,5 @@ jobs:
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
 
-      target_feed_url: 'https://pkgs.dev.azure.com/frends-platform/frends-tasks/_packaging/test/nuget/v3/index.json'
       target_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
       env_vars: '{"FOO": ${{ toJSON(secrets.FOO) }}}'
