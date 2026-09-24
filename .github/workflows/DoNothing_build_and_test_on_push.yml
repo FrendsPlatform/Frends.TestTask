@@ -14,7 +14,7 @@ jobs:
   build:
     uses: FrendsPlatform/FrendsTasks/.github/workflows/collective_build.yml@workflows-update
     with:
-      os: lin
+      os: all
       workdir: Frends.TestTask.DoNothing
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
