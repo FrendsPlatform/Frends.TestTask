@@ -2,24 +2,23 @@ name: DoNothing Main
 
 on:
   push:
-    branches:    
+    branches:
       - main
     paths:
       - 'Frends.TestTask.DoNothing/**'
+      - '.github/workflows/**'
   workflow_dispatch:
-  
 jobs:
-  linux_build:
-    name: build on linux
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/linux_build_main.yml@main
+  build:
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@workflows-update
     with:
+      workflow_mode: main
+      os: all
       workdir: Frends.TestTask.DoNothing
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
-  windows_build:
-    name: build on windows
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/build_main.yml@main
-    with:
-      workdir: Frends.TestTask.DoNothing
-    secrets:
-      badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
+      env_vars: |
+        {
+          "FOO": ${{ toJSON(secrets.FOO) }},
+          "BAR": ${{ toJSON(secrets.BAR) }}
+        }

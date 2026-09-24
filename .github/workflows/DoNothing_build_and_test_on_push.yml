@@ -12,12 +12,16 @@ on:
 
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/collective_build.yml@workflows-update
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@workflows-update
     with:
+      workflow_mode: work
       os: all
       workdir: Frends.TestTask.DoNothing
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
-
       target_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
-      env_vars: '{"FOO": ${{ toJSON(secrets.FOO) }}}'
+      env_vars: |
+        {
+          "FOO": ${{ toJSON(secrets.FOO) }},
+          "BAR": ${{ toJSON(secrets.BAR) }}
+        }

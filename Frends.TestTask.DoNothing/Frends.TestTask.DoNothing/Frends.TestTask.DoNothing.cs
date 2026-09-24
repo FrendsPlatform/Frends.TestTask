@@ -10,7 +10,7 @@ namespace Frends.TestTask.DoNothing;
 public static class TestTask
 {
     /// <summary>
-    /// TaskDescription
+    /// This is not a proper Frends task, it is only for testing build and publish pipelines.
     /// [Documentation](https://tasks.frends.com/tasks/frends-tasks/Party-Echo-Execute)
     /// </summary>
     /// <param name="input">Essential parameters.</param>
