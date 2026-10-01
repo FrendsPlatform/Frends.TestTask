@@ -15,7 +15,7 @@ namespace Frends.TestTask.DoNothing.Tests
 
             var result = TestTask.DoNothing(new Input(), new Options(), CancellationToken.None);
 
-            Assert.IsFalse(result.Success);
+            Assert.That(result.Success, Is.False);
             Assert.That(username, Is.EqualTo("bar"));
         }
 
@@ -37,13 +37,13 @@ namespace Frends.TestTask.DoNothing.Tests
 
             var result = TestTask.DoNothing(input, options, CancellationToken.None);
 
-            Assert.IsFalse(result.Success);
-            Assert.IsNull(result.Error);
+            Assert.That(result.Success, Is.False);
+            Assert.That(result.Error, Is.Null);
 
             Assert.That(input.Content, Is.EqualTo("foobar"));
             Assert.That(input.Repeat, Is.EqualTo(2));
             Assert.That(options.Delimiter, Is.EqualTo(","));
-            Assert.IsFalse(options.ThrowErrorOnFailure);
+            Assert.That(options.ThrowErrorOnFailure, Is.False);
             Assert.That(options.ErrorMessageOnFailure, Is.EqualTo("Custom error message"));
         }
 
@@ -63,7 +63,7 @@ namespace Frends.TestTask.DoNothing.Tests
                 Error = error,
             };
 
-            Assert.IsTrue(result.Success);
+            Assert.That(result.Success, Is.True);
             Assert.That(result.Error, Is.Not.Null);
             Assert.That(result.Error.Message, Is.EqualTo("Unable to join strings."));
             Assert.That(result.Error.AdditionalInfo, Is.SameAs(exception));
