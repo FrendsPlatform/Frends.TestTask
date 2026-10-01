@@ -1,4 +1,6 @@
 name: DoNothing Main
+permissions:
+  contents: read
 
 on:
   push:
@@ -10,7 +12,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@workflows-update
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@hot-fix
     with:
       workflow_mode: main
       os: all

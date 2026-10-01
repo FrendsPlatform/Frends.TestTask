@@ -1,4 +1,6 @@
 name: DoNothing Test
+permissions:
+  contents: read
 
 on:
   push:
@@ -12,7 +14,7 @@ on:
 
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@workflows-update
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@hot-fix
     with:
       workflow_mode: work
       os: all
