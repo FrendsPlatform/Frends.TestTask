@@ -22,5 +22,5 @@ jobs:
       env_vars: |
         {
           "FOO": ${{ toJSON(secrets.FOO) }},
-          "BAR": ${{ toJSON(secrets.BAR) }}
+          "BAR": ${{ secrets.BAR }}
         }
