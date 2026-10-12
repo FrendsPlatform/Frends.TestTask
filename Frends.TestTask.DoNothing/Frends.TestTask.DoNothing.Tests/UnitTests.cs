@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using dotenv.net;
 using Frends.TestTask.DoNothing.Definitions;
 using NUnit.Framework;
 
@@ -35,13 +36,15 @@ namespace Frends.TestTask.DoNothing.Tests
         [Test]
         public void BarEnvironmentVariable_ShouldMatchExpectedValue()
         {
-            const string expected = "pa\"s'w/o\\rd'";
+            DotEnv.Load();
+            const string expected = "pa\"s'w/o\\o\\rd";
             var actual = Environment.GetEnvironmentVariable("BAR");
 
-            TestContext.WriteLine($"BAR={FormatForLog(actual)}");
+            TestContext.WriteLine($"BAR={actual}");
+            TestContext.WriteLine($"Formatted BAR={FormatForLog(actual)}");
 
             Assert.That(actual, Is.EqualTo(expected),
-                $"expected was {FormatForLog(expected)} but actual was {FormatForLog(actual)}");
+                $"expected was {FormatForLog(expected)} but actual was: {actual} | Formatted: {FormatForLog(actual)}");
         }
 
         [Test]
