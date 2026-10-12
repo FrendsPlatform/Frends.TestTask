@@ -8,6 +8,19 @@ namespace Frends.TestTask.DoNothing.Tests
     [TestFixture]
     public class TestTaskTests
     {
+        private static string FormatForLog(string value)
+        {
+            if (value == null)
+            {
+                return "<null>";
+            }
+
+            return value
+                .Replace("\\", "\\\\")
+                .Replace("\r", "\\r")
+                .Replace("\n", "\\n");
+        }
+
         [Test]
         public void DoNothingTest()
         {
@@ -17,6 +30,18 @@ namespace Frends.TestTask.DoNothing.Tests
 
             Assert.That(result.Success, Is.False);
             Assert.That(username, Is.EqualTo("bar"));
+        }
+
+        [Test]
+        public void BarEnvironmentVariable_ShouldMatchExpectedValue()
+        {
+            const string expected = "pa\"s'w/o\\rd'";
+            var actual = Environment.GetEnvironmentVariable("BAR");
+
+            TestContext.WriteLine($"BAR={FormatForLog(actual)}");
+
+            Assert.That(actual, Is.EqualTo(expected),
+                $"expected was {FormatForLog(expected)} but actual was {FormatForLog(actual)}");
         }
 
         [Test]
