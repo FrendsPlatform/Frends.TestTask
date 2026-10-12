@@ -17,10 +17,7 @@ jobs:
       workflow_mode: main
       os: all
       workdir: Frends.TestTask.DoNothing
+      env_var_names: "FOO,BAR"
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
-      env_vars: |
-        {
-          "FOO": ${{ toJSON(secrets.FOO) }},
-          "BAR": ${{ secrets.BAR }}
-        }
+      env_vars: ${{ toJSON(secrets) }}

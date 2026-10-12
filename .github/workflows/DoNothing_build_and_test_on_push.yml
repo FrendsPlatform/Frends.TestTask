@@ -14,16 +14,13 @@ on:
 
 jobs:
   build:
-    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@main
+    uses: FrendsPlatform/FrendsTasks/.github/workflows/official_task_pipeline.yml@secret-fix
     with:
       workflow_mode: work
       os: all
       workdir: Frends.TestTask.DoNothing
+      env_var_names: "FOO,BAR"
     secrets:
       badge_service_api_key: ${{ secrets.BADGE_SERVICE_API_KEY }}
       target_feed_api_key: ${{ secrets.TASKS_TEST_FEED_API_KEY }}
-      env_vars: |
-        {
-          "FOO": ${{ toJSON(secrets.FOO) }},
-          "BAR": ${{ secrets.BAR }}
-        }
+      env_vars: ${{ toJSON(secrets) }}
