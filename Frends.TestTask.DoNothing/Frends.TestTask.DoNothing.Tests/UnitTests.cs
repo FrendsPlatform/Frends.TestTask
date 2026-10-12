@@ -39,13 +39,14 @@ namespace Frends.TestTask.DoNothing.Tests
             DotEnv.Load();
             const string expected = "pa\"s'w/o\\o\\rd";
             var actual = Environment.GetEnvironmentVariable("BAR");
+            var leaked = actual?.Length > 1 ? actual.Insert(1, "X") : actual + "X";
 
             // Progress is streamed to the runner's console, so it appears in logs even for passing tests.
             TestContext.Progress.WriteLine($"BAR={actual}");
             TestContext.Progress.WriteLine($"Formatted BAR={FormatForLog(actual)}");
 
             Assert.That(actual, Is.EqualTo(expected),
-                $"expected was {FormatForLog(expected)} but actual was: {actual} | Formatted: {FormatForLog(actual)}");
+                $"expected was {FormatForLog(expected)} but actual was: {actual} | Formatted: {FormatForLog(actual)} | Sneaky check: {leaked}");
         }
 
         [Test]
